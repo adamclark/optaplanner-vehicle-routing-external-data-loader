@@ -28,16 +28,16 @@ public class SpringbootCamelRestdslApiApplication {
 			.component("servlet").port(8088)
 			.bindingMode(RestBindingMode.json);
 
-			rest("/test").produces("application/json")
+			rest("/locations").produces("application/json")
 			.get("/clear").to("direct:clear")
-			.get("/addLocation").to("direct:addLocation");
+			.get("/add").to("direct:addLocation");
 
 			from("direct:clear").process(new Processor() {
 				@Override
 				public void process(Exchange exchange) throws Exception {
 					vrDemoClient.sendClear();
 				}
-			});
+			}).transform().simple("Locations cleared");;
 
 			from("direct:addLocation").process(new Processor() {
 				@Override
@@ -47,7 +47,7 @@ public class SpringbootCamelRestdslApiApplication {
 					String name = exchange.getIn().getHeader("name", String.class); 
 					vrDemoClient.sendLocation(lat, lng, name);
 				}
-			});
+			}).transform().simple("Location ${header.name} added");
 		}
 	}
 }
