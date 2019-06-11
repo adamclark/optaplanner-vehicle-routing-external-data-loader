@@ -1,6 +1,4 @@
-package com.azdemo.vrdemo.client;
-
-import com.azdemo.vrdemo.client.VRDemoClient;
+package com.demo.vrdemo.client;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;

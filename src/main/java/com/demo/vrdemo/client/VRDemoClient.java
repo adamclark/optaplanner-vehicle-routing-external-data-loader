@@ -1,4 +1,4 @@
-package com.azdemo.vrdemo.client;
+package com.demo.vrdemo.client;
 
 import org.apache.log4j.Logger;
 import org.springframework.messaging.simp.stomp.StompHeaders;
