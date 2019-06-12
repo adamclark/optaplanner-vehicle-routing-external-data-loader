@@ -1,4 +1,4 @@
-# Spring WebSocket Chat Client
+# Optaplanner Vehicle Routing Demo - Custom Locations
 
 A simple application to allow custom locations to be externally interfaced into
 the Optaplanner vehicle routing demo [https://github.com/kiegroup/optaweb-vehicle-routing].
